@@ -10,3 +10,11 @@ cat("Total Population Size:", nrow(life_expectancy), "\n")
 analysis_data <- life_expectancy %>%
   select(Life.Expectancy.World.Bank, Health.Expenditure..) %>%
   na.omit()
+
+# Descriptive statistics
+cat("Sample Size:", nrow(analysis_data), "\n")
+cat("\nLife Expectancy Statistics:\n")
+print(summary(analysis_data$Life.Expectancy.World.Bank))
+cat("\nHealth Expenditure % Statistics:\n")
+print(summary(analysis_data$Health.Expenditure..))
+

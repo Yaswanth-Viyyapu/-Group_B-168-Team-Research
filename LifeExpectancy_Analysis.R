@@ -117,3 +117,16 @@ print(histogram)
 png("histogram.png", width = 800, height = 600, res = 100)
 print(histogram)
 dev.off()
+
+
+
+
+# Pearson Correlation Test
+correlation_test <- cor.test(analysis_data$Life.Expectancy.World.Bank, analysis_data$Health.Expenditure..,method = "pearson")
+print(correlation_test)
+
+cat("\n=== Correlation Analysis Summary ===\n")
+cat("Pearson r:", correlation_test$estimate, "\n")
+cat("P-value:", correlation_test$p.value, "\n")
+cat("95% CI:", paste("[", round(correlation_test$conf.int[1], 4), ", ", round(correlation_test$conf.int[2], 4), "]"), "\n")
+

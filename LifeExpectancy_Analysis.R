@@ -47,7 +47,11 @@ scatter_plot <- ggplot(analysis_data,
     x = "Health Expenditure (% of GDP)",
     y = "Life Expectancy (years)"
   ) +
-  theme_minimal()
+  theme_minimal(base_size = 16) + theme(plot.title = element_text(size = 20, face = "bold"),
+    plot.subtitle = element_text(size = 18),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 14)
+  )
 
 print(scatter_plot)
 
@@ -86,7 +90,7 @@ histogram <- ggplot(analysis_data, aes(x = Life.Expectancy.World.Bank)) +
            color = "darkgreen",
            angle = 90,
            vjust = -0.5,
-           size = 3.8) +
+           size = 6) +
   
   # Median annotation
   annotate("text",
@@ -96,10 +100,10 @@ histogram <- ggplot(analysis_data, aes(x = Life.Expectancy.World.Bank)) +
            color = "purple",
            angle = 90,
            vjust = -0.5,
-           size = 3.8) +
+           size = 6) +
   
   # Skewness annotation
-  annotate("text",x = Inf, y = Inf,hjust = 1.1, vjust = 1.6,label = paste0("Skewness = ", round(skew_le, 2)),size = 4,fontface = "bold") +
+  annotate("text",x = Inf, y = Inf,hjust = 1.1, vjust = 1.6,label = paste0("Skewness = ", round(skew_le, 2)),size = 6,fontface = "bold") +
   
   labs(
     title = "Life Expectancy Distribution with Centre and Skewness",
@@ -108,7 +112,11 @@ histogram <- ggplot(analysis_data, aes(x = Life.Expectancy.World.Bank)) +
     y = "Density"
   ) +
   
-  theme_minimal()
+  theme_minimal(base_size = 16) + theme(plot.title = element_text(size = 20, face = "bold"),
+    plot.subtitle = element_text(size = 18),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 14)
+  )
 
 print(histogram)
 
